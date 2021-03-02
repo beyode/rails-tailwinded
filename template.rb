@@ -11,15 +11,15 @@ OUTPUT_COLOR = :blue
 def add_template_repository_to_source_path
   if __FILE__ =~ %r{\Ahttps?://}
     require 'tmpdir'
-    source_paths.unshift(tempdir = Dir.mktmpdir('jumpstart-rails-api-'))
+    source_paths.unshift(tempdir = Dir.mktmpdir('rails-tailwinded-'))
     at_exit { FileUtils.remove_entry(tempdir) }
     git clone: [
       '--quiet',
-      'https://github.com/beyode/jumpstart-rails-api.git',
+      'https://github.com/beyode/rails-tailwinded.git',
       tempdir
     ].map(&:shellescape).join(' ')
 
-    if (branch = __FILE__[%r{jumpstart-rails-api/(.+)/template.rb}, 1])
+    if (branch = __FILE__[%r{rails-tailwinded/(.+)/template.rb}, 1])
       Dir.chdir(tempdir) { git checkout: branch }
     end
   else

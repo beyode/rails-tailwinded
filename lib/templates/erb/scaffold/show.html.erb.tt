@@ -1,0 +1,38 @@
+<div class="bg-white shadow overflow-hidden sm:rounded-lg sm:m-6 lg:m-12">
+  <div class="px-4 py-5 sm:px-6">
+   <div class="flex justify-between">
+    <div>
+    <h3 class="text-lg leading-6 font-medium text-gray-900">
+      <%= plural_table_name.capitalize %> Information
+    </h3>
+    <p class="mt-1 max-w-2xl text-sm text-gray-500">
+      <%= plural_table_name.capitalize %> details.
+    </p>
+    </div>
+    <div>
+    <%%= link_to <%= index_helper %>_path, class: 'px-3 py-2 bg-gray-700 rounded-md text-white' do %>
+      All <%= plural_table_name.capitalize %>
+    <%% end %>
+    </div>
+
+   </div>
+
+  </div>
+  <div class="border-t border-gray-200">
+  <dl>
+    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+      <%- attributes.each do |attribute| -%>
+      <dt class="text-sm font-medium text-gray-500">
+        <%= attribute.human_name %>
+      </dt>
+      <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+        <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
+      </dd>
+      <%- end -%>
+    </div
+  </dl>
+  <%%= link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'my-3 mx-2 px-3 py-2 bg-gray-700 rounded-md text-white' do %>
+    Edit
+  <%% end %>
+  </div>
+</div>

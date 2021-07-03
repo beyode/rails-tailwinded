@@ -18,3 +18,17 @@ New generated scaffold view will include tailwind styles
 ```
 rails g scaffold Employee name phone city
 ```
+
+### Sample screenshots
+
+__Index Page__
+
+![Inde page](/sample/index.png)
+
+__Edit page__
+
+![Edit page](/sample/edit.png)
+
+__Show page__
+
+![Show page](/sample/show.png)

@@ -85,13 +85,18 @@ def install_taiwindcss
 end
 
 def copy_templates
-  directory 'lib', force: true
+  # directory 'lib', force: true
+  apply 'lib/template.rb'
 end
+
+# Start (Main)
+add_template_repository_to_source_path
 
 after_bundle do
   run 'spring stop'
 
   install_taiwindcss
+  copy_templates
 
   git :init
   git add: '.'

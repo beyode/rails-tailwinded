@@ -31,8 +31,12 @@
       <%- end -%>
     </div
   </dl>
-  <%%= link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'my-3 mx-2 px-3 py-2 bg-gray-700 rounded-md text-white' do %>
+
+  <div class="m-3">
+  <%%= link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'px-3 py-2 bg-gray-700 rounded-md text-white' do %>
     Edit
   <%% end %>
+  </div>
+  
   </div>
 </div>

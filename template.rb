@@ -85,8 +85,12 @@ def install_taiwindcss
 end
 
 def copy_templates
-  # directory 'lib', force: true
+  # Apply template from lib/template.rb
   apply 'lib/template.rb'
+
+  copy_file 'Procfile'
+  copy_file 'Procfile.dev'
+  copy_file '.foreman'
 end
 
 # Start (Main)
